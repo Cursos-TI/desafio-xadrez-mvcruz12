@@ -35,6 +35,24 @@ int main(){
         k++;
     } while (k < 8);
 
+    printf("\nMovimento do Cavalo:\n");
+
+    int movimentoCompleto = 1;  // Flag para controlar o movimento em 'L'
+
+    //  Comando para mover o cavalo duas vezes para cima e uma vez para a direita usando while e for.
+
+    while (movimentoCompleto--)
+    {
+        for (int l = 0; l < 2; l++)
+        {
+            printf("Cima\n");  // Imprime "Cima" duas vezes.
+        }
+
+        printf("Direita\n");  //Imprime "Direita" uma vez.
+         
+    }
+    
+
     return 0;
 
-}    
+}

@@ -1,56 +1,75 @@
 #include <stdio.h>
 
+// Declaração das funções para que o código as reconheça.
+
+void moverTorre(int casas);
+void moverRainha(int casas1);
+void moverBispo(int casas2);
+void moverBispo1(int casas3);
+
+// Uso de funções recursivas para simular a movimentação da Torre 5 casas para a direita, Rainha 9 casas para a esquerda e Bispo 5 casas na diagonal para cima e à direita.
+
+void moverTorre(int casas)
+{
+    if(casas > 0)
+    {
+        printf("Direita\n");
+        moverTorre(casas - 1);
+    }
+}
+
+void moverRainha(int casas1)
+{
+    if(casas1 > 0)
+    {
+        printf("Esquerda\n");
+        moverRainha(casas1 - 1);
+    }
+}
+
+void moverBispo(int casas2)
+{
+    if(casas2 > 0)
+    {
+        printf("Cima\n");
+        moverBispo1(casas2 - 1);
+    }
+}
+
+void moverBispo1(int casas3)
+{
+    if(casas3 > 0)
+    {
+        printf("Direita\n");
+        moverBispo(casas3 - 1);
+    }
+}
+
+
 int main(){
 
-    printf("Movimento da Torre:\n");
+    printf("Movimento da Torre:\n");    
 
-    // Comando para mover a Torre 5 casas para a direita usando for.
-
-    for (int i = 0; i < 5; i++)
-    {
-        printf("Direita\n");    // Imprime a direção do movimento da Torre.
-    }
+    moverTorre(5);                            // Função recursiva da Torre.
     
     printf("\nMovimento do Bispo:\n");
     
-    // Comando para mover o Bispo 5 casas na diagonal para cima e à direita usando while.
-    
-    int j = 0;
+    moverBispo(10);                           // Função recursiva do Bispo.
 
-    while (j < 5)
-    {
-        printf("Cima Direita\n");  // Imprime a direção do movimento do Bispo.
-        j++;
-    }
+    printf("\nMovimento da Rainha:\n");    
 
-    printf("\nMovimento da Rainha:\n");
-
-    // Comando para mover a Rainha 8 casas para a esquerda usando do-while.
-
-    int k = 0;
-
-    do
-    {
-        printf("Esquerda\n");   // Imprime a direção do movimento da Rainha.
-        k++;
-    } while (k < 8);
+    moverRainha(9);                           // Função recursiva da Rainha. 
 
     printf("\nMovimento do Cavalo:\n");
 
-    int movimentoCompleto = 1;  // Flag para controlar o movimento em 'L'
+    // Loop com múltiplas variáveis e condições para simular o movimento do Cavalo em "L". 
 
-    //  Comando para mover o cavalo duas vezes para cima e uma vez para a direita usando while e for.
-
-    while (movimentoCompleto--)
-    {
-        for (int l = 0; l < 2; l++)
-        {
-            printf("Cima\n");  // Imprime "Cima" duas vezes.
-        }
-
-        printf("Direita\n");  //Imprime "Direita" uma vez.
-         
-    }
+      for (int i = 0, movimentoCompleto = 0; i < 2 && movimentoCompleto < 2; i++, movimentoCompleto++)
+      {
+            printf("Cima\n");
+      }
+   
+    printf("Direita\n");
     
 
     return 0;

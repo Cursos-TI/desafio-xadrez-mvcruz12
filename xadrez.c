@@ -36,3 +36,5 @@ int main(){
     } while (k < 8);
 
     return 0;
+
+}    
